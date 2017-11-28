@@ -89,32 +89,52 @@ public class NumberToTextTest {
 	@Test
 	public void ConverterNumero1v7fracionado() throws RuntimeException {
 		numToText = new NumberToText();
-		assertThat(numToText.Convert(1.7), equalTo("Valor inválido"));
+		assertThat(numToText.Convert(1.7), equalTo("Um real e setenta centavos"));
 		
 	}
 	
 	@Test
 	public void ConverterNumero999v1fracionado() throws RuntimeException {
 		numToText = new NumberToText();
-		assertThat(numToText.Convert(999.1), equalTo("Valor inválido"));
+		assertThat(numToText.Convert(999.1), equalTo("Novecentos e noventa e nove reais e dez centavos"));
 		
 	}
 	@Test
 	public void ConverterNumero0v5fracionado() throws RuntimeException {
 		numToText = new NumberToText();
-		assertThat(numToText.Convert(0.5), equalTo("Valor inválido"));
+		assertThat(numToText.Convert(0.5), equalTo("Cinquenta centavos"));
+		
+	}
+	@Test
+	public void ConverterNumero999Negativo() throws RuntimeException {
+		numToText = new NumberToText();
+		assertThat(numToText.Convert(-999.00), equalTo("Novecentos e noventa e nove reais negativo"));
+		
+	}
+	@Test
+	public void ConverterNumero5Negativo() throws RuntimeException {
+		numToText = new NumberToText();
+		assertThat(numToText.Convert(-5.00), equalTo("Cinco reais negativo"));
+		
+	}
+	
+	@Test
+	public void ConverterNumero1000Negativo() throws RuntimeException {
+		numToText = new NumberToText();
+		assertThat(numToText.Convert(-1000.00), equalTo("Valor inválido"));
 		
 	}
 	@Test
 	public void ConverterNumero999v45fracionadoNegativo() throws RuntimeException {
 		numToText = new NumberToText();
-		assertThat(numToText.Convert(-999.45), equalTo("Valor inválido"));
+		assertThat(numToText.Convert(-999.45), 
+				equalTo("Novecentos e noventa e nove reais e quarenta e cinco centavos negativo"));
 		
 	}
 	@Test
 	public void ConverterNumero0v9fracionadoNegativo() throws RuntimeException {
 		numToText = new NumberToText();
-		assertThat(numToText.Convert(-0.9), equalTo("Valor inválido"));
+		assertThat(numToText.Convert(-0.9), equalTo("Noventa centavos negativo"));
 		
 	}
 	
