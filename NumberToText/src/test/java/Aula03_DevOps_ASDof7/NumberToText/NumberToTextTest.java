@@ -6,7 +6,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import org.junit.Test;
 
 public class NumberToTextTest {
-	
+
 	NumberToText numToText;
 	@Test
 	public void ConverterNumero0() throws RuntimeException {
