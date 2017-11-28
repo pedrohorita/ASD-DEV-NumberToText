@@ -80,6 +80,13 @@ public class NumberToTextTest {
 	}
 	
 	@Test
+	public void ConverterNumero999() throws RuntimeException {
+		numToText = new NumberToText();
+		assertThat(numToText.Convert(999.00), equalTo("Novecentos e noventa e nove reais"));
+		
+	}
+	
+	@Test
 	public void ConverterNumero1v7fracionado() throws RuntimeException {
 		numToText = new NumberToText();
 		assertThat(numToText.Convert(1.7), equalTo("Valor inválido"));
